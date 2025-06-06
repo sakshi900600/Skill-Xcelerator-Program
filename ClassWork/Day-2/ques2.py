@@ -3,13 +3,12 @@
 list = [28, "AC" , "g", "h", "KM", "IPL", " RCB"]
 #  = 28 + (1+2)
 
-print(dir(list))
+# print(dir(list))
 
 
 num = 0
 
-n = len(list)
-for item in range(n):
+for item in list:
     if type(item) == int:
         num += item
     elif item.islower():
@@ -19,5 +18,9 @@ for item in range(n):
             num += ord(ch) - ord('A')+1
 
 
+
 print(num)
+
+
+
 

@@ -16,7 +16,7 @@ Questions:
 3. missing no from 1 t0 n
 4. squart root of a number 
 
-5. find out which no is not no's times like it there is 3 in string there must be 3 e's 
+5. find out which no is not no's times like it there is 3 in string there must be three 3's 
 
 s ="228255855854441333"
 ans = 2,4,8

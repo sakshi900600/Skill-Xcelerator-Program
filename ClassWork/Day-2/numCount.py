@@ -1,10 +1,11 @@
-s = "13343442425"
+s = "228255855854441333" # output: 2, 8, 4, 
+t = "1223333455666666"  # output: 3, 4, 5, 
 
-i = 0
-for j in range(len(s)):
-    count=0
-    if s[j]==s[i]:
-        count += 1
+# Count how many times each digit appears
+from collections import Counter
+freq = Counter(t)
 
-    if count != s[i]:
-        print(s[i])
+# Check which digit does NOT appear as many times as its value
+for digit in freq:
+    if freq[digit] != int(digit):
+        print(digit, end=", ")
