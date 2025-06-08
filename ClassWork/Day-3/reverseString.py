@@ -1,7 +1,7 @@
 s = "abcd"
 
+# Approach 1----------------------
 reversed_str = ""
-
 i= len(s)-1
 
 while i >= 0:
@@ -9,6 +9,7 @@ while i >= 0:
     i -= 1
 
 
+# Approach 2 -----------------------
 rev_str = ""
 for x in s:
     rev_str = x + rev_str
