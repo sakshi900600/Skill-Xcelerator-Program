@@ -1,7 +1,5 @@
 # s = "ABACDDCDXYBAGHGGHGABYXDCDDCABA"
-s = "ABCCBA"
-length = len(s)
-count = 0
+
 
 
 # AT LAST if it is not in the list,  store in the list instead of printing  and at last return the length of the list.
@@ -11,6 +9,10 @@ count = 0
 # print(dir(set))
 
 # case - 1  #output - 6 ------------------------  right ✅
+
+s = "ABCCBA"
+length = len(s)
+
 set = set()
 list = list()
 for i in range(length):
