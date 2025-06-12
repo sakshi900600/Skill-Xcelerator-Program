@@ -12,7 +12,7 @@ for i in range(len(s)):
         substr = s[i : j+1]
         substrings.add(substr)
 
-print(substrings)
+# print(substrings)
 
 
 def validation(s):
@@ -21,7 +21,7 @@ def validation(s):
     for char in s:
         charCount[char] = charCount.get(char,0)+1
     
-    print(charCount)
+    # print(charCount)
 
     for char, count in charCount.items():
         if count > 1:
