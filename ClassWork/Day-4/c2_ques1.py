@@ -75,10 +75,10 @@ it_companies = ["Facebook", "Google", "Microsoft", "Apple", "IBM", "Oracle", "Am
 # print(it_companies[0:3])
 
 # ques 19
-# print(it_companies[-1:-4])
+# print(it_companies[-3:])
 
 # ques 20
-mid = len(it_companies)//2
+# mid = len(it_companies)//2
 # print(it_companies[mid])
 
 
@@ -114,13 +114,13 @@ back_end = ['Node','Express', 'MongoDB']
 # print(front_end + back_end)
 
 # ques 27
-full_stack = front_end + back_end
-print(full_stack)
+# full_stack = front_end + back_end
+# print(full_stack)
 
 
 # ques 28
-index = full_stack.index('Redux')
-full_stack[index+1 : index+1] = ["Python", "SQL"]
-print(full_stack)
+# index = full_stack.index('Redux')
+# full_stack[index+1 : index+1] = ["Python", "SQL"]
+# print(full_stack)
 
 
