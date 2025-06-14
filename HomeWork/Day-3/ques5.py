@@ -4,11 +4,23 @@
 
 s = "waterbottle"
 # t = "erbottlewat"  #output : True
-t = "ejlkrbottlewat"  #output : False
-s = s+s
+t = "erbottlewat"  #output : False
+s = s+s 
+# this also works: s= 2*s
 
-isRotation = False
-if s.find(t) != -1:
-    isRotation = True
 
-print(isRotation)
+
+# logic -1 --------------------------------------
+# isRotation = False
+# if s.find(t) != -1:
+#     isRotation = True
+
+# logic -2 --------------------------------------
+if t in s:
+    print("Yes")
+else:
+    print("No")
+
+# print(isRotation)
+
+

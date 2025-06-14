@@ -1,4 +1,4 @@
-# give a list you have to print elem whose freq is second 
+# give a list you have to print elem whose freq is second largest
 
 li = [1,2,2,3,3,1,1,1,2]
 

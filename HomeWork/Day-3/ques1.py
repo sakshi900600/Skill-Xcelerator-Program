@@ -2,7 +2,7 @@
 # s = "python" output = "nythop"
 
 
-def swapfltry(s):
+def swapfl(s):
     newStr = ""
     length = len(s)
     for i in range(length):
@@ -19,7 +19,7 @@ def swapfltry(s):
 
 s = "python"  #output: "nython"
 t = "Sakshi"  #output: "iakshS"
-print(swapfltry(s))
-print(swapfltry(t))
+print(swapfl(s))
+print(swapfl(t))
 
 

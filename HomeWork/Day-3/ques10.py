@@ -25,3 +25,7 @@ n = 3 # output: ['((()))', '(()())', '(())()', '()(())', '()()()']
 result = parenthesis(n)
 print(result)
         
+
+
+
+
