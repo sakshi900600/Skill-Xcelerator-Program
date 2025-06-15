@@ -10,16 +10,24 @@
 
 s = "3[a2[c]]"
 
-s = s.replace('[', '*')
+# s = s.replace('[', '')
 # print(s)
 
+s = s[:: -1]
+print(s)
+# print(s*2)
+
 ans = ""
-for i in range(len(s)-1, 0):
-    if(s[i] == '*'):
-        s1 = s[i-1]
-        s2 = s[i+1]
-        s = s.replace()
-        ans += res
+curr_str = ""
+
+for i in range(len(s)):
+    if s[i].isalpha():
+        curr_str += s[i]
+    
+    if s[i].isdigit():
+        ans += curr_str * int(s[i])
+        curr_str = ""
+        
     
 
 print(ans)
