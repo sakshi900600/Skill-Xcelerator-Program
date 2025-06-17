@@ -10,14 +10,18 @@ definitions = {
 
 text = "Photosynthesis happens in chlorophyll using sunlight" 
 
-text = text.split()
+words = text.split()
 
-for name, defi in definitions.items():
-    if name in text:
-        text.remove(name)
-        text.append(defi)
+result = []
 
-print(text)
+for word in words:
+    if definitions.get(word):
+      result.append(definitions.get(word))
+    else:
+       result.append(word)
     
+
+ans = " ".join(result)
+print(ans)
 
 

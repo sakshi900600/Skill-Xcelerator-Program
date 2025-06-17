@@ -10,24 +10,28 @@
 
 s = "3[a2[c]]"
 
-# s = s.replace('[', '')
-# print(s)
 
-s = s[:: -1]
-print(s)
-# print(s*2)
-
-ans = ""
-curr_str = ""
-
-for i in range(len(s)):
-    if s[i].isalpha():
-        curr_str += s[i]
+def decodeString(s):
+    stack = []
+    current_num = 0
+    current_str = ""
     
-    if s[i].isdigit():
-        ans += curr_str * int(s[i])
-        curr_str = ""
-        
+    for char in s:
+        if char.isdigit():
+            current_num = current_num * 10 + int(char)
+        elif char == '[':
+            stack.append((current_str, current_num))
+            current_str = ""
+            current_num = 0
+        elif char == ']':
+            prev_str, num = stack.pop()
+            current_str = prev_str + current_str * num
+        else:
+            current_str += char
     
+    return current_str
 
-print(ans)
+# Test the function
+print(decodeString("3[a2[c]]"))  # Output: "accaccacc"
+
+
