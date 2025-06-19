@@ -6,7 +6,7 @@ ques 20, doubt: here A and a is same but B and b is not same why????????
 
 
 ### advanced str ques: 
-6 ques left
+4 ques left
 
 
 ### binary search :
@@ -18,5 +18,6 @@ ques 20, doubt: here A and a is same but B and b is not same why????????
 
 
 ### Python project: 
-project-1, project-2 left
+project-1
+project-2 left
 
