@@ -1,4 +1,4 @@
-# you are give 2 lists and you have to create new list in which add the common elem of both lists and sort that list in ascending order and print the list
+# you are give 2 lists and you have to create new list in which add the common elem of both lists and sort and print the list
 
 
 l1 = [1,2,3,4]

@@ -1,6 +1,7 @@
-# give a list you have to print elem whose freq is second largest
+# given a list you have to print elem whose freq is second largest
 
 li = [1,2,2,3,3,1,1,1,2]
+# li = [1,1,2,3,5]
 
 highestFreq1 = 0
 highestFreq2 = 0
@@ -16,7 +17,7 @@ for i in range(len(li)):
         highestFreq2 = freq
         highestFreq2elem = li[i]
 
-print(highestFreq2)
+# print(highestFreq2)
 print(highestFreq2elem)
 
 
