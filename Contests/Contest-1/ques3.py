@@ -22,7 +22,7 @@
 
 
 
-n = 10
+n = 3
 
 # first finding the char for specified size
 alphabet = [chr(i) for i in range(97,123)]
