@@ -13,11 +13,11 @@ ques 3: count freq of all elem in list. I used dict but in dict 1 and True both 
 
 
 ### binary search :
-10 ques left
+5 ques left
 
 
 ### previous year coding ques:
-10 ques left
+5 ques left
 
 
 ### Python project: 

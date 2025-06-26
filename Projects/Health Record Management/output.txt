@@ -1,0 +1,183 @@
+
+ --------- Welcome to the health management system 🩺 --------- 
+
+Choose an option to perform operation on records: 
+1: to add patient ✅
+2: to view all patient 👀
+3: to search patient by id 🔍
+4: to update patient vitals 🌡️
+5: to delete patient ❌
+6: to exit
+
+Enter your option no: 1
+Enter patient id: p001
+Enter patient name: Riya Sen  
+Enter patient age: 21
+Enter gender: female
+
+ Add vitals detials:
+Enter temperature: 100
+Enter bp (ex-120/80): 190/40
+Enter heart rate: 99
+
+✅ Patient 'Riya sen' added successfully!
+
+ Press Enter to continue...
+
+ --------- Welcome to the health management system 🩺 ---------
+
+Choose an option to perform operation on records:
+1: to add patient ✅
+2: to view all patient 👀
+3: to search patient by id 🔍
+4: to update patient vitals 🌡️
+5: to delete patient ❌
+6: to exit
+
+Enter your option no: 2
+
+🧑 Patient Records:
+---------------------------------------------------------
+ID: p001 | Name: Riya sen | Age: 21 | Temp: 100.0°F | BP: 190/40 | HR: 99 bpm
+----------------------------------------------------------
+
+ Press Enter to continue...
+
+ --------- Welcome to the health management system 🩺 ---------
+
+Choose an option to perform operation on records:
+1: to add patient ✅
+2: to view all patient 👀
+3: to search patient by id 🔍
+4: to update patient vitals 🌡️
+5: to delete patient ❌
+6: to exit
+
+Enter your option no: 3
+
+🔍 Search Patient
+Enter patient id: p001
+
+🧾 Patient record found.
+------------------------------------------
+ID: p001 | Name: Riya sen | Age: 21 | Temp: 100.0°F | BP: 190/40 | HR: 99 bpm
+------------------------------------------
+
+⚠️ Blood pressure is in critical range.
+
+ Press Enter to continue...
+
+ --------- Welcome to the health management system 🩺 ---------
+
+Choose an option to perform operation on records:
+1: to add patient ✅
+2: to view all patient 👀
+3: to search patient by id 🔍
+4: to update patient vitals 🌡️
+5: to delete patient ❌
+6: to exit
+
+Enter your option no: 4
+
+ Update Patient Vitals
+Enter patient id: p001
+
+ Enter new vitals:
+Enter temperature: 111
+Enter bp (e.g:120/80): 150/80
+Enter heart rate: 99
+Patient vitals updated successfully.
+
+⚠️ Temperature is in critical range.
+
+⚠️ Blood pressure is in critical range.
+
+ Press Enter to continue...
+
+ --------- Welcome to the health management system 🩺 ---------
+
+Choose an option to perform operation on records:
+1: to add patient ✅
+2: to view all patient 👀
+3: to search patient by id 🔍
+4: to update patient vitals 🌡️
+5: to delete patient ❌
+6: to exit
+
+Enter your option no: 2
+
+🧑 Patient Records:
+---------------------------------------------------------
+ID: p001 | Name: Riya sen | Age: 21 | Temp: 111.0°F | BP: 150/80 | HR: 99 bpm
+----------------------------------------------------------
+
+ Press Enter to continue...
+
+ --------- Welcome to the health management system 🩺 ---------
+
+Choose an option to perform operation on records:
+1: to add patient ✅
+2: to view all patient 👀
+3: to search patient by id 🔍
+4: to update patient vitals 🌡️
+5: to delete patient ❌
+6: to exit
+
+Enter your option no: 5
+
+🗑 Delete Patient Record
+Enter id of patient to delete: p00
+❌ Patient with ID 'p00' not found!
+
+ Press Enter to continue...
+
+ --------- Welcome to the health management system 🩺 ---------
+
+Choose an option to perform operation on records:
+1: to add patient ✅
+2: to view all patient 👀
+3: to search patient by id 🔍
+4: to update patient vitals 🌡️
+5: to delete patient ❌
+6: to exit
+
+Enter your option no: 5
+
+🗑 Delete Patient Record
+Enter id of patient to delete: p001
+
+🗑 Patient record for ID 'p001' (Riya sen) deleted.
+
+ Press Enter to continue...
+
+ --------- Welcome to the health management system 🩺 ---------
+
+Choose an option to perform operation on records:
+1: to add patient ✅
+2: to view all patient 👀
+3: to search patient by id 🔍
+4: to update patient vitals 🌡️
+5: to delete patient ❌
+6: to exit
+
+Enter your option no: 2
+
+🧑 Patient Records:
+---------------------------------------------------------
+No patient record found.
+
+ Press Enter to continue...
+
+ --------- Welcome to the health management system 🩺 ---------
+
+Choose an option to perform operation on records:
+1: to add patient ✅
+2: to view all patient 👀
+3: to search patient by id 🔍
+4: to update patient vitals 🌡️
+5: to delete patient ❌
+6: to exit
+
+Enter your option no: 6
+
+Thank you for visiting 🤝
