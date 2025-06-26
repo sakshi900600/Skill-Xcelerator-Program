@@ -29,8 +29,13 @@ def add_Patient():
 
 
 def view_all_patients():
+    print("🧑 Patient Records: ")
+    print("---------------------------------- ")
+    for patient in all_patients:
+        print(f" | Name: {patient["name"]} | Age: {patient['age']} | Temp: {patient['temp']}°F | BP: {patient["bp"]} | HR: {patient["hr"]} bpm ")
 
-    return all_patients
+    print("----------------------------------")
+
 
 
 def search_patient():
