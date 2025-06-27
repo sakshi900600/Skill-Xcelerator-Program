@@ -21,5 +21,5 @@ ques 3: count freq of all elem in list. I used dict but in dict 1 and True both 
 
 
 ### Python project: 
-project-2 left
+
 
