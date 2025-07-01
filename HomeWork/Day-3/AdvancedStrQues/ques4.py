@@ -1,44 +1,67 @@
-# Given a string of sorted alphanumeric characters, find missing ranges.  
-#  Input: "12346789BCDF" → Output: ["5", "A", "E"]
+# # Given a string of sorted alphanumeric characters, find missing ranges.  
+# #  Input: "12346789BCDF" → Output: ["5", "A", "E"]
 
 
-# want clarification: 
-# 1. will string always start with digit and if digit in input will start from 2/3 then whether 1,2 will be consider as missing or not. 
+# # want clarification: 
+# # 1. if digit in input will start from 2/3 then whether 1,2 will be consider as missing or not. 
 
 
-s = "12346789BCDF"
+# I have assumed that: 
+# 1.  for char it will be always between A to last char in given string and i have to find out all missing char between them and if there is no missing char then add the char after last char
+
+# 2.  for number it will be always from 1 to 9 but missing will be only b/n 1 to last digit in num. if not then digit after last digit and if last digit is 9 then nothing is missing. 
+
+
+
+# s = "12346789ABCDEF"  # output: ['5', 'G']
+s = "2346789BCDF"  # output: ['5', 'G']
+
 num = ""
-str = ""
+character = ""
 
 
 for i in range(len(s)):
     if s[i].isdigit():
         num += s[i]
     elif s[i].isalpha():
-        str += s[i]
+        character += s[i]
 
-
-
-print(num)
-print(str)
+# print(num)
+# print(str)
 
 li = list()
 
 
 # checking missing no
-for i in range(len(num)-1):
-    if int(num[i+1]) - int(num[i]) != 1:
-        li.append(int(num[i]) +1)
+lastdigit = int(num[-1])
+
+for i in range(1, lastdigit):
+    if str(i) not in num:
+        li.append(str(i))
 
 
-# checking missing alphabet
-for i in range(len(str)-1):
-    if(ord(str[i+1]) - ord(str[i]) != 1):
-        ch = chr(ord(str[i])+1)
-        li.append(ch)
 
 
+
+start = ord('A')
+end = ord(character[-1])
+
+# add all missinsg char in list
+temp = []
+while start < end:
+    if chr(start) not in character:
+        temp.append(chr(start))
+        li.extend(temp)
+    start += 1
+
+# if not any char missing then add char after last char.
+if not temp:
+    char = chr(end+1)
+    li.append(char)
 
 
 print(li)
-print(ord('E'))
+# print(ord('E'))
+
+
+
