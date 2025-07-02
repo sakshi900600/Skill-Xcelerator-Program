@@ -14,7 +14,9 @@
 
 
 # s = "12346789ABCDEF"  # output: ['5', 'G']
-s = "2346789BCDF"  # output: ['5', 'G']
+# s = "12346789BCDF"  # output: ['5', 'A', 'E']
+# s = "2356ACDE" # output: ['1', '4', 'B']
+s = "2345789ABCD"  # output: ['1', '6', 'E']
 
 num = ""
 character = ""
@@ -29,39 +31,52 @@ for i in range(len(s)):
 # print(num)
 # print(str)
 
-li = list()
+def missingNumber(num):
+    
+    li1 = list()
+
+    # checking missing no
+    lastdigit = int(num[-1])
+
+    for i in range(1, lastdigit):
+        if str(i) not in num:
+            li1.append(str(i))
 
 
-# checking missing no
-lastdigit = int(num[-1])
+    # if nothing is missing:
+    if not li1:
+        if lastdigit != 9:
+            li1.append(lastdigit+1)
 
-for i in range(1, lastdigit):
-    if str(i) not in num:
-        li.append(str(i))
-
-
+    return li1
 
 
 
-start = ord('A')
-end = ord(character[-1])
+def missingChar(character):
+    start = ord('A')
+    end = ord(character[-1])
 
-# add all missinsg char in list
-temp = []
-while start < end:
-    if chr(start) not in character:
-        temp.append(chr(start))
-        li.extend(temp)
-    start += 1
+    # add all missinsg char in list
+    li2 = []
+    for i in range(start,end):
+        if chr(i) not in character:
+            li2.append(chr(i))
 
-# if not any char missing then add char after last char.
-if not temp:
-    char = chr(end+1)
-    li.append(char)
+    # if not any char missing then add char after last char.
+    if not li2:
+        char = chr(end+1)
+        li2.append(char)
+
+    return li2
 
 
-print(li)
-# print(ord('E'))
+li1 = missingNumber(num)
+li2 = missingChar(character)
+
+ans = []
+ans.extend(li1)
+ans.extend(li2)
+print(ans)
 
 
 
