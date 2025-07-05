@@ -1,7 +1,7 @@
 # Next Greater Element 
 # Description: For every element in the array, find the next greater element to its righ
 
-arr = [4, 5, 2, 25] 
+arr = [4, 5, 2, 25,1,2] 
  
 # Output: 
 # [5, 25, 25, -1]
