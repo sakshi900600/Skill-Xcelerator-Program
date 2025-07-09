@@ -84,12 +84,14 @@ class DLinkedList():
             return
         
         temp = self.head
-        while temp.data != data and temp != None:
+        while temp != None and temp.data != data:
             temp = temp.next
         
-        temp.data = newData
-        return
+        if temp == None:
+            return
 
+        temp.data = newData
+    
 
     def update(self,pos,data):
         if pos == 1:
@@ -102,9 +104,12 @@ class DLinkedList():
             i +=1 
             temp = temp.next
         
-        temp.data = data
-        return
+        if temp.next == None:
+            return
         
+        temp.data = data
+   
+
 
     def length(self):
         temp = self.head
@@ -146,10 +151,10 @@ ll.printll()
 # ll.printll()
 
 
-ll.remove(1)
-ll.remove(4)
-ll.remove(3)
-ll.printll()
+# ll.remove(1)
+# ll.remove(4)
+# ll.remove(3)
+# ll.printll()
 
 
 # ll.insert(5,50)
@@ -163,16 +168,16 @@ ll.printll()
 # ll.printll()
 
 
-# ll.updateD(40,400)
+ll.updateD(40,400)
 # ll.updateD(10,100)
-# ll.updateD(30,300)
-# ll.printll()
+ll.updateD(50,500)
+ll.printll()
 
 
-# ll.update(1,100)
+ll.update(1,100)
 # ll.update(4,400)
-# ll.update(3,300)
-# ll.printll()
+ll.update(39,300)
+ll.printll()
 
 
 print(ll.length())

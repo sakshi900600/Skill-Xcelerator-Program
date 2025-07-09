@@ -43,12 +43,15 @@ class LinkedList():
         
         temp = self.head
         i = 1
-        while i != pos-1 and temp.next != None:
+        while i < pos-1 and temp.next != None:
             i += 1
             temp = temp.next
-        
+
+        if temp.next == None:
+            return
+
         temp.next = temp.next.next
-        return
+
     
 
     def removeD(self,data):
@@ -60,8 +63,10 @@ class LinkedList():
         while temp.next != None and temp.next.data != data:
             temp = temp.next
         
+        if temp.next == None:
+            return
+        
         temp.next = temp.next.next
-        return
 
         
     def updateD(self,data,newData):
@@ -70,12 +75,15 @@ class LinkedList():
             return
         
         temp = self.head
-        while temp.data != data and temp != None:
+        while temp != None and temp.data != data:
             temp = temp.next
         
+        if temp == None:
+            return
+
         temp.data = newData
-        return
         
+
     def update(self,pos,data):
         if pos == 1:
             self.head.data = data
@@ -87,8 +95,11 @@ class LinkedList():
             i +=1 
             temp = temp.next
         
+        if temp.next == None:
+            return
+        
         temp.data = data
-        return
+        
         
 
     def length(self):
@@ -129,8 +140,8 @@ ll.printll()
 # ll.printll()
 
 
-ll.remove(4)
-ll.printll()
+# ll.remove(4)
+# ll.printll()
 # ll.remove(4)
 # ll.printll()
 
@@ -143,18 +154,19 @@ ll.printll()
 # ll.removeD(60)
 # ll.removeD(10)
 # ll.removeD(30)
-# ll.printll()
+ll.printll()
 
 
 # ll.updateD(40,400)
 # ll.updateD(10,100)
-# ll.updateD(30,300)
+# ll.updateD(300,30)
 # ll.printll()
 
 
 # ll.update(1,100)
 # ll.update(4,400)
 # ll.update(3,300)
+# ll.update(6,500)
 # ll.printll()
 
 
