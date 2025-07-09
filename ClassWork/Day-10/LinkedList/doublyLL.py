@@ -47,26 +47,32 @@ class DLinkedList():
             return
         
         if pos == 1:
+            if self.head.next != None:
+                self.head.next.prev = None
             self.head = self.head.next
             return
         
         temp = self.head
         i = 1
-        while i != pos-1 and temp.next.next != None:
+        while i != pos-1 and temp.next != None:
             i += 1
             temp = temp.next
         
+        if temp.next == None:
+            return
+
         if temp.next.next == None:
             temp.next = None
-            return
+        else:
+            temp.next = temp.next.next
+            temp.next.prev = temp
         
-        temp.next = temp.next.next
-        temp.next.next.prev = temp
-        return
-    
+         
 
     def removeD(self,data):
         if self.head.data == data:
+            if self.head.next != None:
+                self.head.next.prev = None
             self.head = self.head.next
             return
         
@@ -74,8 +80,11 @@ class DLinkedList():
         while temp.next != None and temp.next.data != data:
             temp = temp.next
         
-        temp.next = temp.next.next
-        return
+        if temp.next == None:
+            return
+        else:
+            temp.next = temp.next.next
+        
 
         
     def updateD(self,data,newData):
@@ -120,10 +129,24 @@ class DLinkedList():
         return count
 
 
+    def lengthPrev(self):
+        temp = self.head
+        count = 0
+
+        while temp.next != None:
+            temp = temp.next
+
+        while temp != None:
+            count += 1
+            temp = temp.prev
+        
+        return count
+
+
     def printll(self):
         temp = self.head
         while temp != None:
-            print(temp.data , end="--->")
+            print(temp.data , end="<--->")
             temp = temp.next
         print("None")
 
@@ -153,6 +176,7 @@ ll.printll()
 
 # ll.remove(1)
 # ll.remove(4)
+# ll.remove(12)
 # ll.remove(3)
 # ll.printll()
 
@@ -162,22 +186,23 @@ ll.printll()
 # ll.printll()
 
 # ll.removeD(50)
-# ll.removeD(60)
+# ll.removeD(40)
 # ll.removeD(10)
 # ll.removeD(30)
 # ll.printll()
 
 
-ll.updateD(40,400)
+# ll.updateD(40,400)
 # ll.updateD(10,100)
-ll.updateD(50,500)
-ll.printll()
+# ll.updateD(50,500)
+# ll.printll()
 
 
-ll.update(1,100)
+# ll.update(1,100)
 # ll.update(4,400)
-ll.update(39,300)
-ll.printll()
+# ll.update(39,300)
+# ll.printll()
 
 
 print(ll.length())
+print(ll.lengthPrev())

@@ -1,3 +1,19 @@
+#  7. Sliding Window Maximum (Queue-based) 
+# Description: Given an array and a window size k, print the max of each subarray of size k. 
+# Input: 
+nums = [1,3,-1,-3,5,3,6,7] 
+k = 3 
+ 
+# Output: 
+# [3, 3, 5, 5, 6, 7] 
+
+
+# My approach:  I will take a queue and i iwll always maintain exactly k elem in queue and get max of all k elem and store it in answer and after storing i will pop one elem from it. ultimately we get our answer.
+
+
+
+
+
 class Queue:
     def __init__(self, queue_cap):
         self.capacity = queue_cap
@@ -47,26 +63,35 @@ class Queue:
     def is_full(self):
         return self.end >= self.capacity-1
     
-
-
-q = Queue(5)
-q.push(10)
-q.push(20)
-q.push(30)
-q.push(40)
-q.push(50)
-print(q.peek())
-print(q.is_empty())
-print(q.is_full())
-
-# print(q.pop())
-# print(q.pop())
-# print(q.pop())
-
-while not q.is_empty():
-    print(q.peek(), end=" ")
-    q.pop()
-
+    def getmax(self):
+        maxi = self.container[0]
+        for i in range(len(self.container)):
+            if self.container[i] > maxi:
+                maxi = self.container[i]
+        
+        return maxi
     
 
-        
+n = len(nums)
+q = Queue(1000)
+li = [0] *n
+
+j = 0
+count = 0
+for i in range(len(nums)):
+    if count <= k:
+        q.push(nums[i])
+        count += 1
+
+    li[j] = q.getmax()
+    j += 1
+    q.pop()
+    count -= 1
+
+print(li)
+
+
+
+
+
+
