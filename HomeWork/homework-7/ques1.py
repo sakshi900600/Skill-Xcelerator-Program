@@ -7,6 +7,9 @@
 # 10
 
 
+# logic: Stand at each index and find area from that index to nth and store max area in a variable.  And of course it may possible that somewhere height is min from current height so everytime check min height and then calculate area.
+
+
 a = [2, 1, 5, 6, 2, 3]
 
 n = len(a)

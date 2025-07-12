@@ -1,40 +1,41 @@
 #  5. Decode String 
 # Description: Decode an encoded string with nested patterns like 3[a2[c]] → accaccacc. 
 # Input: 
-s = "3[a2[c]]" 
+s = "3[a2[c]]" # accaccacc
  
-# Output: 
-# "accaccacc"
+
+# s = "3[a]2[bc]"  # aaabcbc
+
+# s = "2[abc]3[cd]ef"  # abcabccdcdcdef
 
 
-# s = s.replace('[', "")
-
-st = []
 n = len(s)
+st = []
 ans = ""
+cnum = 0
+cstr = ""
+
+
 for i in range(n):
-    if s[i] != ']':
-        st.append(s[i])
+    if s[i].isdigit():
+        cnum = cnum * 10 + int(s[i])
     
-    else:
-        while not st[-1].isdigit():
-            elem = st.pop()
-            if elem.isalpha():
-                ans = ans + elem
-            
-            elif elem.isdigit():
-                ans = int(elem) * ans
+    if s[i].isalpha():
+        cstr += s[i]
+    
+    if s[i] == '[':
+        st.append([cnum,cstr])
+        cnum = 0
+        cstr = ""
+    
+    if s[i] == ']':
+        pnum = st[-1][0]
+        pstr = st[-1][1]
+        st.pop()
+        cstr = pstr + (pnum * cstr)
 
 
-print(st)
-print(ans)
-
-
-
-
-
-2 * "ldkjf"
-print(ans)
+print(cstr)
 
 
 

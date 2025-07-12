@@ -30,6 +30,10 @@ n = len(prices)
 
 
 # using stack logic -------------------
+# first i try to store elem in stack but that doesn't work. So
+# I stored index instead of value. popping out while top <= curr and calculating count by subtracting (curr idx - top idx). and if stack gets empty then storing (curr idx + 1) in ans list. 
+
+
 ans = [1]*n
 
 stack = []

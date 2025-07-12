@@ -13,7 +13,6 @@ k = 3
 
 
 
-
 class Queue:
     def __init__(self, queue_cap):
         self.capacity = queue_cap

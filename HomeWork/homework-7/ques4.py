@@ -2,14 +2,20 @@
 # Description: Given a string and an integer k, remove k adjacent duplicate characters. 
 # Input: 
 s = "deeedbbcccbdaa" 
-k = 3 
+k = 3  # "aa"
  
 
-s = "abcd"
-k = 2
+# s = "abcd"
+# k = 2  # "abcd"
 
-# Output: 
-# "aa"
+
+# logic: I tried to store elem in stack. And did this
+# 1. if stack is empty or curr elem doesn't match with top elem then put curr elem with 1 freq. 
+# 2. if curr elem match with stack top elem then increase its frequency. 
+# 3. if top elem freq == k then pop it from stack.
+# 4. Build answer by doing freq*char 
+# 5. return answer.
+
 
 n = len(s)
 st = []
@@ -26,7 +32,7 @@ for i in range(n):
         st.pop()
 
 
-print(st)
+# print(st)
 ans = ""
 while len(st) != 0:
     ch = st[-1][0]

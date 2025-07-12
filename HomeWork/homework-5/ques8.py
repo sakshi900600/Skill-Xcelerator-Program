@@ -1,7 +1,6 @@
 # 8. coin change
 # Problem: 
-#  You are given coins of different denominations and a total amount. Find the minimum number of coins 
-# to make that amount. Return -1 if not possible. 
+#  You are given coins of different denominations and a total amount. Find the minimum number of coins to make that amount. Return -1 if not possible. 
 # Input: 
 coins = [1, 2, 5]
 amount = 11 

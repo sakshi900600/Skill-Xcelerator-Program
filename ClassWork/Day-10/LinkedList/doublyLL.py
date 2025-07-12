@@ -36,9 +36,9 @@ class DLinkedList():
                 return
 
             newNode.next = temp.next
+            newNode.prev = temp
             temp.next.prev = newNode
             temp.next = newNode
-            newNode.prev = temp
             return
 
 
@@ -166,10 +166,11 @@ ll.printll()
 ll.insert(4,40)
 ll.printll()
 
+
 # ll.insert(1,100)
 # ll.printll()
-# ll.insert(3,300)
-# ll.printll()
+ll.insert(3,300)
+ll.printll()
 # ll.insert(5,50)
 # ll.printll()
 

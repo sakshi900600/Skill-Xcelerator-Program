@@ -12,24 +12,37 @@ def infix(s):
     st = []
     for i in range(len(s)):
         if s[i].isdigit():
-            st.append(s[i])
-        else:
-            li.append(s[i])
+            st.append(int(s[i]))
         
-        if s[i] == ')':
+        elif s[i] == ')':
             ind = len(li)-1
             while st and li and li[ind] != '(':
                 op = li.pop()
                 e2 = st.pop()
                 e1 = st.pop()
-                res = f"({e1}{op}{e2})"
+                res = f"{e1}{op}{e2}"
                 st.append(res)
                 ind -= 1
-        
+
+        else:
+            li.append(s[i])
+    
+
     return st.pop()
 
 
-print(infix(s))
+
+op_stack = []
+num_stack = []
+
+for i in range(len(s)):
+    if s[i].isdigit():
+        num_stack.append(int(s[i]))
+    elif s[i] == ")":
+        dljf
+        
+
+# print(infix(s))
 
 
 

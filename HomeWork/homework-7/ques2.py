@@ -1,12 +1,19 @@
-s = "1432219"
-k = 3
+# 2. Remove K Digits 
+# Description: Given a number as a string and an integer k, remove k digits to make the smallest 
+# possible number
+
+
+# s = "1432219"
+k = 3  # ans = 1219
 
 # s = "10"
-# k = 2
+# k = 2  # ans = 0
 
-# s = "10200"
-# k = 1
+s = "10200"
+k = 1  # ans = 200
 
+
+# logic:  store only the smaller elem in stack.  Every time compare top elem with current s[i] and until top elem is greater pop it from stack and decrease k . At last also check if k still not 0 then return only 0 to n-k elem as answer and here need to trim all leading 0 so do that as well. 
 
 
 def removeKdigits(num, k):

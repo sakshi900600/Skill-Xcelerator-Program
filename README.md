@@ -23,3 +23,15 @@ ques 3: count freq of all elem in list. I used dict but in dict 1 and True both 
 ### Python project: 
 
 
+### DP Ques: homework-5
+ques no 9
+
+
+### Stack and queue:
+ques no 7, 9,10
+
+
+
+### Stack and queue advanced ques: homework-7
+1. largest rectangle in histogram: done using 2 loops but tle
+2. trapping rainwater : done but without stack
