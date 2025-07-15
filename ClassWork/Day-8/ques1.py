@@ -7,6 +7,7 @@
 
 
 # sieve of 
+
 prime = [True] * 100
 prime[0], prime[1] = False, False
 
@@ -19,4 +20,17 @@ for i in range(len(prime)):
             k = k+i
 
 
+# print(prime)
+n = 3
+ans = -1
 
+count = 0
+for i in range(len(prime)):
+    if prime[i] == True:
+        count += 1
+        ans = i
+    
+    if count == 3:
+        break
+
+print(ans)
