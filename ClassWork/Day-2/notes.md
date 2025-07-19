@@ -23,5 +23,4 @@ ans = 2,4,8
 
 
 <!-- doubts -->
-noAtrightIdx: how to print no if all no are already present
 sqrt: no idea how to implement it. 

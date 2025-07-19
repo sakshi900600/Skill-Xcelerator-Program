@@ -5,13 +5,6 @@ class Node:
         self.right = None
     
 
-class BT:
-    def __init__(self):
-        self.root = None
-    
-
-
-
 # inorder traversal : left-root-right
 def IOP(node):
     if node == None:
@@ -42,11 +35,6 @@ def PostOrder(node):
     print(node.data,end=" ")
 
 
-def createBTFromInorder(node, li):
-    si = 0
-    ei = len(li-1)
-
-
 # maxvalue in the tree
 def maxValue(node):
     if node == None:
@@ -56,6 +44,18 @@ def maxValue(node):
     maxright = maxValue(node.right)
 
     return max(node.data, max(maxleft,maxright))
+
+
+# minvalue in the tree
+def minValue(node):
+    if node == None:
+        return 1000
+    
+    minleft = minValue(node.left)
+    minright = minValue(node.right)
+
+    return min(node.data, min(minleft,minright))
+
 
 
 # height of a tree
@@ -70,19 +70,127 @@ def heightOfTree(node):
 
     
 
-# longest distance between 2 nodes
+# longest distance between 2 nodes - diameter
+ 
 def longestDistance(node):
+    global maxi
+    maxi = 0
     if node == None:
         return 0
     
-    longest_height_left = heightOfTree(node.left)
+    longest_height_left = heightOfTree(node.left)   
     longest_height_right = heightOfTree(node.right)
+    maxi = max(maxi, (longest_height_left + longest_height_right))
 
-    maxi = 0
-    return max(maxi,(longest_height_left + longest_height_right + 1))
+    return maxi
 
 
 # maximum width between 2 nodes on horizontal level:
+
+def hd_helper(root,hd):
+    global min_hd, max_hd
+    if root == None:
+        return
+
+    min_hd = min(min_hd, hd)
+    max_hd = max(max_hd, hd)
+
+    hd_helper(root.left, hd-1)
+    hd_helper(root.right, hd+1)
+
+
+min_hd = 0
+max_hd = 0
+
+
+def horizontal_distance(root):
+    global min_hd, max_hd
+    min_hd = 0
+    max_hd = 0
+    hd_helper(root,0)
+
+    return max_hd - min_hd
+
+    
+
+# top-view of a tree:
+from collections import deque
+# queue = deque()
+
+def top_view(root):
+    if root == None:
+        return []
+     
+    dct = {}
+    q = deque([(root,0)])
+
+    while q:
+        node, hd = q.popleft()
+
+        if hd not in dct:
+            dct[hd] = node.data
+        
+        if node.left != None:
+            q.append((node.left,hd-1))
+        
+        if node.right != None:
+            q.append((node.right,hd+1))
+    
+
+    sorted_key = sorted(dct.keys())
+    for i in sorted_key:
+        print(dct[i], end=" ")
+
+
+    
+
+# create binary tree from given list - iterative
+def create_bt_it(li):
+
+    if not li:
+        return None
+    
+    nodes = []
+    for i in li:
+        if i == -1:
+            nodes.append(None)
+        else:
+            nodes.append(Node(i))
+    
+    # print(nodes)
+
+    for i in range(len(li)):
+        if nodes[i] is not None:
+            left_idx = 2*i+1
+            right_idx = 2*i+2
+
+            if left_idx < len(li):
+                nodes[i].left = nodes[left_idx]
+            
+            if right_idx < len(li):
+                nodes[i].right = nodes[right_idx]
+    
+    return nodes[0]
+        
+    
+# create binary tree from given list - recursive
+def create_bt_rec(li,index):
+    # if invalid index or -1
+    if index >= len(li) or li[index] == -1:
+        return None
+
+    node = Node(li[index])
+    node.left = create_bt_rec(li,2*index+1)
+    node.right = create_bt_rec(li,2*index+2)
+
+    return node
+
+
+
+
+
+
+
 
 
  
@@ -94,8 +202,8 @@ if __name__ == '__main__':
     root.left.left = Node(44)
     root.left.right = Node(51)
     root.right.right = Node(600)
-    root.right.right.left = Node(60)
-    root.right.right.right = Node(90)
+    # root.right.right.left = Node(60)
+    # root.right.right.right = Node(90)
     
 
 # IOP(root)
@@ -104,7 +212,23 @@ if __name__ == '__main__':
 # print("\n")
 # PostOrder(root)
 
-
 # print(maxValue(root))
+# print(minValue(root))
+
 # print(heightOfTree(root))
-print(longestDistance(root))
+# print(longestDistance(root))
+
+
+# print(horizontal_distance(root))
+
+# top_view(root)
+
+
+
+
+li = [2,9,8,10,11,-1,12]
+# IOP(create_bt_it(li))
+# IOP(create_bt_rec(li,0))
+
+
+
