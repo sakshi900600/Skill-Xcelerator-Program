@@ -12,84 +12,49 @@ k = 3
 
 
 
+   
 
-class Queue:
-    def __init__(self, queue_cap):
-        self.capacity = queue_cap
-        self.first = -1
-        self.end = -1
-        self.container = [0]*queue_cap
-    
-    
-    def push(self,data):
-        if self.end >= self.capacity-1:
-            return
+# 1 way -----------------
+def slidwndomax(nums,k):
+    n = len(nums)
+    li = []
+
+    for i in range(n-k+1):
+        maxi = nums[i]
+
+        for j in range(i, i+k):
+            maxi = max(maxi, nums[j])
+        li.append(maxi)
+
+    print(li)
+
+# slidwndomax(nums,k)
+
+
+
+# 2 way ----------------
+from collections import deque
+
+
+def slidwndomax2(nums,k):
+    n = len(nums)
+    dq = deque()
+    ans = []
+    for i in range(n):
+        if dq and dq[0] <= i-k:
+            dq.popleft()
         
-        if self.end == -1:
-            self.end = 0
-            self.first = 0
-            self.container[self.end] = data
-            return
+        while dq and nums[dq[-1]] <= nums[i]:
+            dq.pop()
+        dq.append(i)
 
-        self.end += 1
-        self.container[self.end] = data
-
+        if i >= k-1:
+            ans.append(nums[dq[0]])
     
-    def pop(self):
-        if self.first < 0:
-            return
-        
-        data = self.container[self.first]
-
-        if self.first == self.end:
-            self.first = -1
-            self.end = -1
-        else:
-            self.first += 1
-        return data
-        
-    
-    def peek(self):
-        if self.is_empty():
-            return
-        
-        return self.container[self.first]
-
-    
-    def is_empty(self):
-        return self.first < 0
-    
-    def is_full(self):
-        return self.end >= self.capacity-1
-    
-    def getmax(self):
-        maxi = self.container[0]
-        for i in range(len(self.container)):
-            if self.container[i] > maxi:
-                maxi = self.container[i]
-        
-        return maxi
-    
-
-n = len(nums)
-q = Queue(1000)
-li = [0] *n
-
-j = 0
-count = 0
-for i in range(len(nums)):
-    if count <= k:
-        q.push(nums[i])
-        count += 1
-
-    li[j] = q.getmax()
-    j += 1
-    q.pop()
-    count -= 1
-
-print(li)
+    print(ans)
 
 
+slidwndomax2(nums,k)
 
 
 
