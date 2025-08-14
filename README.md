@@ -1,3 +1,21 @@
+## Doubts:
+### linkedlist implementation:
+currently our code works: if a valid position but when i try to perform operation on 20th pos and ll size is 5 then it simply perform that operation on last element isn't it wrong??
+
+Or i think coz linkedlist is dynamic so certainly it will create link at end whenever new node comes. so there is no point of position. 
+
+
+### maximum width between 2 nodes on horizontal level:
+here basically we are doing max_hd-min_hd  , so can we write the same code as written in top-view and at last instead printing top view return last-first value from sorted dict keys. is it acceptable ???? 
+
+
+
+
+
+
+
+
+
 ### hw-4:
 ques 6: this output is wrong. ('photosynthesis' with 11 unique characters)
 ques 20, doubt: here A and a is same but B and b is not same why????????

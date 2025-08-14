@@ -21,9 +21,17 @@ for i in range(len(li)):
 print(highestFreq2elem)
 
 
-# logic: 2 
-# store freq of all list elem using li.count (by applying loop)
-# then sort the freq list and get second freq elem.
-# 
-#  
 
+# logic: 2 
+dct = {}
+
+for i in li:
+    dct[i] = dct.get(i,0)+1
+
+des_sorted_val = sorted(dct.values(), reverse=True)
+
+sec_larg_freq = des_sorted_val[1]
+
+for k,v in dct.items():
+    if v == sec_larg_freq:
+        print(k)

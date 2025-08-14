@@ -21,6 +21,3 @@ Questions:
 s ="228255855854441333"
 ans = 2,4,8
 
-
-<!-- doubts -->
-sqrt: no idea how to implement it. 

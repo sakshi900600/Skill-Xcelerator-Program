@@ -55,6 +55,9 @@ class LinkedList():
     
 
     def removeD(self,data):
+        if self.head == None:
+            return 
+        
         if self.head.data == data:
             self.head = self.head.next
             return
@@ -85,17 +88,20 @@ class LinkedList():
         
 
     def update(self,pos,data):
+        if self.head == None:
+            return
+        
         if pos == 1:
             self.head.data = data
             return
         
         temp = self.head
         i = 1
-        while i != pos and temp.next != None:
+        while i != pos and temp != None:
             i +=1 
-            temp = temp.next
+            temp = temp
         
-        if temp.next == None:
+        if temp == None:
             return
         
         temp.data = data

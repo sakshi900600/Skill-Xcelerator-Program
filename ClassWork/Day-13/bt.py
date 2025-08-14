@@ -113,36 +113,6 @@ def horizontal_distance(root):
 
     
 
-# top-view of a tree:
-from collections import deque
-# queue = deque()
-
-def top_view(root):
-    if root == None:
-        return []
-     
-    dct = {}
-    q = deque([(root,0)])
-
-    while q:
-        node, hd = q.popleft()
-
-        if hd not in dct:
-            dct[hd] = node.data
-        
-        if node.left != None:
-            q.append((node.left,hd-1))
-        
-        if node.right != None:
-            q.append((node.right,hd+1))
-    
-
-    sorted_key = sorted(dct.keys())
-    for i in sorted_key:
-        print(dct[i], end=" ")
-
-
-    
 
 # create binary tree from given list - iterative
 def create_bt_it(li):
@@ -172,7 +142,7 @@ def create_bt_it(li):
     
     return nodes[0]
         
-    
+
 # create binary tree from given list - recursive
 def create_bt_rec(li,index):
     # if invalid index or -1
@@ -188,12 +158,164 @@ def create_bt_rec(li,index):
 
 
 
+# top-view of a tree:
+from collections import deque
+# queue = deque()
+
+def top_view(root):
+    if root == None:
+        return []
+     
+    dct = {}
+    q = deque([(root,0)])
+
+    while q:
+        node, hd = q.popleft()
+
+        if hd not in dct:
+            dct[hd] = node.data
+        
+        if node.left != None:
+            q.append((node.left,hd-1))
+        
+        if node.right != None:
+            q.append((node.right,hd+1))
+    
+
+    sorted_key = sorted(dct.keys())
+    for i in sorted_key:
+        print(dct[i], end=" ")
+
+
+
+def bottom_view(root):
+    if root == None:
+        return
+    
+    dct = {}
+    q = deque([(root,0)])
+
+    while q:
+        node, hd = q.popleft()
+
+        dct[hd] = node.data
+
+        if node.left != None:
+            q.append((node.left, hd-1))
+        
+        if node.right != None:
+            q.append((node.right, hd+1))
+    
+
+    sortedKeys = sorted(dct.keys())
+
+    for i in sortedKeys:
+        print(dct[i])
+
+
+
+# left view:
+def left_view(root,level,li):
+    if root == None:
+        return
+    
+    if level == len(li):
+        li.append(root.data)
+    
+    left_view(root.left, level+1, li)
+    left_view(root.right, level+1, li)
+
+
+# right view:
+def right_view(root,level,li):
+    if root == None:
+        return
+    
+    if level == len(li):
+        li.append(root.data)
+    
+    right_view(root.right, level+1, li)
+    right_view(root.left, level+1, li)
 
 
 
 
 
- 
+# ----------------- Boundary traversal ------------------ #
+
+def isleaf(root):
+    return root.left == None and root.right == None
+
+def addLeftBoundary(root,li):
+    curr = root
+
+    while curr:
+        if not isleaf(curr):
+            li.append(curr.data)
+        
+        if curr.left != None:
+            curr = curr.left
+        else:
+            curr = curr.right
+
+
+def addRightBoundary(root,li):
+    curr = root
+    temp = []
+
+    while curr:
+        if not isleaf(curr):
+            li.append(curr.data)
+        
+        if curr.right != None:
+            curr = curr.right
+        else:
+            curr = curr.left
+
+
+def addleaves(root,li):
+    if root == None:
+        return
+    
+    if isleaf(root):
+        li.append(root.data)
+        return
+    
+    addleaves(root.left,li)
+    addleaves(root.right,li)
+
+
+def print_boundary_traversal(root,li):
+    if root == None:
+        return
+    
+    if not isleaf(root):
+        li.append(root.data)
+    
+    addLeftBoundary(root.left,li)
+    addleaves(root,li)
+    addRightBoundary(root.right,li)
+
+    return li
+
+
+# ---------------------    bt    -------------------------  #
+
+
+
+
+
+# ----------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
 
 if __name__ == '__main__':
     root = Node(10)
@@ -221,14 +343,25 @@ if __name__ == '__main__':
 
 # print(horizontal_distance(root))
 
-# top_view(root)
 
-
-
-
-li = [2,9,8,10,11,-1,12]
+# li = [2,9,8,10,11,-1,12]
 # IOP(create_bt_it(li))
 # IOP(create_bt_rec(li,0))
 
 
 
+# top_view(root)
+bottom_view(root)
+
+# li = []
+# left_view(root,0,li)
+# right_view(root,0,li)
+# print(li)
+
+
+
+
+# boundary traversal
+# li = []
+# print_boundary_traversal(root,li)
+# print(li)
